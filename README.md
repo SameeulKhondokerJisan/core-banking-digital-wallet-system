@@ -8,7 +8,7 @@ The project demonstrates modern backend architecture, financial transaction hand
 * Customer management system
 * Bank account creation and management
 * Digital wallet integration
-* Secure deposit and withdrawal operations
+* Deposit and withdrawal operations
 * Account-to-account money transfers
 * Transaction ledger tracking
 * REST API architecture for service communication
@@ -39,7 +39,33 @@ POST   /accounts
 POST   /accounts/deposit
 POST   /accounts/withdraw
 POST   /transactions/transfer
+POST   /wallets
+GET    /wallets/{walletNumber}
 ```
+
+## Run It
+
+1. Create the database:
+
+   ```sql
+   CREATE DATABASE corebanking;
+   ```
+
+2. Set your MySQL credentials as environment variables (read by `application.properties`):
+
+   ```bash
+   export DB_USERNAME=root
+   export DB_PASSWORD=your_mysql_password
+   ```
+
+3. Start the app (needs Maven installed):
+
+   ```bash
+   cd corebanking-system
+   mvn spring-boot:run
+   ```
+
+The API runs at `http://localhost:8082`. There is no authentication layer; this is a learning project, not a production banking system.
 
 ## Architecture
 
